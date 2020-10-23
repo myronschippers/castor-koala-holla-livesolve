@@ -30,9 +30,18 @@ function setupClickListeners() {
         $('#js-readyForTransferIn').val() === 'N' ? false : true,
       notes: $('#js-notesIn').val(),
     };
-    // call saveKoala with the new obejct
+    // call saveKoala with the new object
     saveKoala(koalaToSend);
   });
+
+  // event listener
+  $('#js-viewKoalas').on('click', '.js-btn-ready', handleClickReady);
+}
+
+function handleClickReady() {
+  const id = $(this).data('id');
+
+  updateKoalaReadyTransfer(id);
 }
 
 //
@@ -77,6 +86,7 @@ function saveKoala(newKoala) {
 
 function updateKoalaReadyTransfer(koalaId) {
   console.log(`UPDATE Koala ${koalaId} - to ready`);
+  // AJAX PUT
 }
 
 //
