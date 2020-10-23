@@ -87,6 +87,18 @@ function saveKoala(newKoala) {
 function updateKoalaReadyTransfer(koalaId) {
   console.log(`UPDATE Koala ${koalaId} - to ready`);
   // AJAX PUT
+  $.ajax({
+    method: 'PUT',
+    url: `/koalas/${koalaId}`,
+    // data: {}
+  })
+    .then((response) => {
+      getKoalas();
+    })
+    .catch(function (err) {
+      console.log(err);
+      alert('Something went wrong readying koala for transfer.');
+    });
 }
 
 //
