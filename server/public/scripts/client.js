@@ -55,11 +55,33 @@ function getKoalas() {
 function saveKoala(newKoala) {
   console.log('in saveKoala', newKoala);
   // ajax call to server to get koalas
+  $.ajax({
+    method: 'POST',
+    url: '/koalas',
+    data: newKoala,
+  })
+    .then(function (response) {
+      clearFormFields();
+      // get new list of koalas
+      getKoalas();
+    }) // successful response
+    .catch(function (err) {
+      console.log(err);
+      alert('Something went wrong save your koala.');
+    });
 }
 
 //
 // DOM INTERACTION
 // ------------------------------
+
+function clearFormFields() {
+  $('#js-nameIn').val('');
+  $('#js-ageIn').val('');
+  $('#js-genderIn').val('');
+  $('#js-readyForTransferIn').val('');
+  $('#js-notesIn').val('');
+}
 
 function render(listOfKoalas) {
   console.log(listOfKoalas);
