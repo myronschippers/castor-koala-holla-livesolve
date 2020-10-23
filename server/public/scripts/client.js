@@ -35,6 +35,10 @@ function setupClickListeners() {
   });
 }
 
+//
+// API / SERVER CALLS
+// ------------------------------
+
 function getKoalas() {
   console.log('in getKoalas');
   // ajax call to server to get koalas
@@ -71,6 +75,10 @@ function saveKoala(newKoala) {
     });
 }
 
+function updateKoalaReadyTransfer(koalaId) {
+  console.log(`UPDATE Koala ${koalaId} - to ready`);
+}
+
 //
 // DOM INTERACTION
 // ------------------------------
@@ -89,6 +97,14 @@ function render(listOfKoalas) {
   for (let koala of listOfKoalas) {
     // check boolean and make Y or N
     let readyYN = koala.ready_to_transfer;
+    let readyTransferBtn = '';
+
+    // check transfer status for button
+    if (koala.ready_to_transfer === false) {
+      readyTransferBtn = `<button class="js-btn-ready" data-id="${koala.id}">
+        Ready for Transfer
+      </button>`;
+    }
 
     if (readyYN) {
       readyYN = 'Y';
@@ -103,6 +119,7 @@ function render(listOfKoalas) {
         <td>${koala.gender}</td>
         <td>${readyYN}</td>
         <td>${koala.notes}</td>
+        <td>${readyTransferBtn}</td>
       </tr>
     `);
   }
