@@ -7,7 +7,17 @@ const pool = require('../modules/pool');
 // GET
 // send back all koalas from DB
 koalaRouter.get('/', (req, res) => {
-  res.send('GET Hello');
+  const queryText = `SELECT * FROM "koalas" ORDER BY "id" ASC;`;
+
+  pool
+    .query(queryText)
+    .then((koalasResponse) => {
+      res.send(koalasResponse.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
 });
 
 // POST
