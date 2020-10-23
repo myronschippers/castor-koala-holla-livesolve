@@ -9,17 +9,26 @@ $(document).ready(function () {
 }); // end doc ready
 
 function setupClickListeners() {
-  $('#addButton').on('click', function () {
+  $('#js-addButton').on('click', function () {
     console.log('in addButton on click');
+    // let readyForTransfer = $('#js-readyForTransferIn').val();
+
+    // if (readyForTransfer === 'N') {
+    //   readyForTransfer = false;
+    // } else {
+    //   readyForTransfer = true;
+    // }
+
     // get user input and put in an object
     // NOT WORKING YET :(
     // using a test object
     let koalaToSend = {
-      name: 'testName',
-      age: 'testName',
-      gender: 'testName',
-      readyForTransfer: 'testName',
-      notes: 'testName',
+      name: $('#js-nameIn').val(),
+      age: $('#js-ageIn').val(),
+      gender: $('#js-genderIn').val(),
+      readyForTransfer:
+        $('#js-readyForTransferIn').val() === 'N' ? false : true,
+      notes: $('#js-notesIn').val(),
     };
     // call saveKoala with the new obejct
     saveKoala(koalaToSend);
