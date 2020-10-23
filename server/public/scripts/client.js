@@ -87,12 +87,21 @@ function render(listOfKoalas) {
   console.log(listOfKoalas);
   $('#js-viewKoalas').empty();
   for (let koala of listOfKoalas) {
+    // check boolean and make Y or N
+    let readyYN = koala.ready_to_transfer;
+
+    if (readyYN) {
+      readyYN = 'Y';
+    } else {
+      readyYN = 'N';
+    }
+
     $('#js-viewKoalas').append(`
       <tr>
         <td>${koala.name}</td>
         <td>${koala.age}</td>
         <td>${koala.gender}</td>
-        <td>${koala.ready_to_transfer}</td>
+        <td>${readyYN}</td>
         <td>${koala.notes}</td>
       </tr>
     `);
