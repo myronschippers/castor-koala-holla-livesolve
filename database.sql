@@ -1,3 +1,4 @@
+-- NAME OF DB = castor_koala
 CREATE TABLE "koalas" (
 	"id" serial primary key,
 	"name" varchar(80) not null,
