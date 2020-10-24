@@ -123,7 +123,7 @@ function render(listOfKoalas) {
 
     // check transfer status for button
     if (koala.ready_to_transfer === false) {
-      readyTransferBtn = `<button class="js-btn-ready" data-id="${koala.id}">
+      readyTransferBtn = `<button class="js-btn-ready btn btn-success btn-sm" data-id="${koala.id}">
         Ready for Transfer
       </button>`;
     }
