@@ -16,56 +16,66 @@
       <h3>1976 Llama Comma Drive</h2>
       <h3>Walla Walla, WA</h2>
     </header>
-    <section id="addKoala" class="container">
-      <h2>Add Koala</h2>
+
+    <div class="container-fluid">
       <!--
         .container
         .row
         .col
-       -->
-      <div class="row mb-3">
-        <div class="col">
-          <input type="text" id="js-nameIn" value="" placeholder="Name">
-        </div>
-        <div class="col">
-          <input type="text" id="js-ageIn" value="" placeholder="Age">
-        </div>
+      -->
+      <div class="row">
+        <section id="addKoala" class="col-4">
+          <h2>Add Koala</h2>
+          <!--
+            .container
+            .row
+            .col
+          -->
+          <div class="row mb-3">
+            <div class="col-6">
+              <input type="text" id="js-nameIn" value="" placeholder="Name">
+            </div>
+            <div class="col-6">
+              <input type="text" id="js-ageIn" value="" placeholder="Age">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-6">
+              <input type="text" id="js-genderIn" value="" placeholder="Gender">
+            </div>
+            <div class="col-6">
+              <input type="text" id="js-readyForTransferIn" value="" placeholder="Transfer">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-12">
+              <input type="text" id="js-notesIn" value="" placeholder="Notes">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-12">
+              <button type="button" id="js-addButton">Add Koala</button>
+            </div>
+          </div>
+        </section>
+        <section class="col-8">
+          <h2>All Koalas</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Ready for Transfer</th>
+                <th>Notes</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="js-viewKoalas">
+            </tbody>
+          </table>
+        </section>
       </div>
-      <div class="row mb-3">
-        <div class="col">
-          <input type="text" id="js-genderIn" value="" placeholder="Gender">
-        </div>
-        <div class="col">
-          <input type="text" id="js-readyForTransferIn" value="" placeholder="Transfer">
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col">
-          <input type="text" id="js-notesIn" value="" placeholder="Notes">
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col">
-          <button type="button" id="js-addButton">Add Koala</button>
-        </div>
-      </div>
-    </section>
-    <section class="container">
-      <h2>All Koalas</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Ready for Transfer</th>
-            <th>Notes</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="js-viewKoalas">
-        </tbody>
-      </table>
-    </section>
+    </div>
   </body>
 </html>
