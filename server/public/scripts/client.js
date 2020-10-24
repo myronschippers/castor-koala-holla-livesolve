@@ -142,6 +142,14 @@ function render(listOfKoalas) {
         <td>${readyYN}</td>
         <td>${koala.notes}</td>
         <td>${readyTransferBtn}</td>
+        <td>
+          <button
+            class="js-btn-delete btn btn-danger"
+            data-id="${koala.id}"
+          >
+            Delete
+          </button>
+        </td>
       </tr>
     `);
   }
