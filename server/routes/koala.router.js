@@ -70,5 +70,20 @@ koalaRouter.put('/:koalaId', (req, res) => {
 });
 
 // DELETE
+// to remove a single koala
+koalaRouter.delete('/:id', (req, res) => {
+  const queryText = `DELETE FROM "koalas" WHERE "id"=$1;`;
+  const queryData = [req.params.id];
+
+  pool
+    .query(queryText, queryData)
+    .then((response) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
 
 module.exports = koalaRouter;
