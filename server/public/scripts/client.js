@@ -111,6 +111,17 @@ function updateKoalaReadyTransfer(koalaId) {
 
 function deleteKoala(id) {
   console.log('DELETE: ', id);
+  $.ajax({
+    method: 'DELETE',
+    url: '/koalas/' + id,
+  })
+    .then((response) => {
+      getKoalas();
+    })
+    .catch(function (err) {
+      console.log(err);
+      alert('Something went wrong removing koala.');
+    });
 }
 
 //
