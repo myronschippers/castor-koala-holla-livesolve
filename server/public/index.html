@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Koalla Holla</title>
     <script src="vendors/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="vendors/bootstrap.min.css">
-    <link rel="stylesheet" href="views/styles.css">
+    <link rel="stylesheet" href="vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="views/styles.css" />
   </head>
   <body>
-    <header>
+    <header
+      class="navbar navbar-dark bg-dark mb-5 d-flex justify-content-start"
+    >
       <img src="images/icon.png" class="icon" />
-      <h1>Koala Holla</h1>
-      <h3>1976 Llama Comma Drive</h2>
-      <h3>Walla Walla, WA</h2>
+      <h1 class="h3">Koala Holla</h1>
+      <span class="h6">1976 Llama Comma Drive</span>
+      <span class="h6">Walla Walla, WA</span>
     </header>
 
-    <div class="container-fluid">
+    <div class="container-fluid pb-5">
       <!--
         .container
         .row
@@ -39,7 +44,7 @@
                 class="form-control"
                 value=""
                 placeholder="Name"
-              >
+              />
             </div>
             <div class="col-6">
               <input
@@ -48,7 +53,7 @@
                 class="form-control"
                 value=""
                 placeholder="Age"
-              >
+              />
             </div>
           </div>
           <div class="row mb-3">
@@ -59,7 +64,7 @@
                 class="form-control"
                 value=""
                 placeholder="Gender"
-              >
+              />
             </div>
             <div class="col-6">
               <input
@@ -68,7 +73,7 @@
                 class="form-control"
                 value=""
                 placeholder="Transfer"
-              >
+              />
             </div>
           </div>
           <div class="row mb-3">
@@ -79,12 +84,18 @@
                 class="form-control"
                 value=""
                 placeholder="Notes"
-              >
+              />
             </div>
           </div>
           <div class="row mb-3">
             <div class="col-12">
-              <button type="button" class="btn btn-primary btn-lg" id="js-addButton">Add Koala</button>
+              <button
+                type="button"
+                class="btn btn-primary btn-lg"
+                id="js-addButton"
+              >
+                Add Koala
+              </button>
             </div>
           </div>
         </section>
@@ -101,8 +112,7 @@
                 <th scope="col"></th>
               </tr>
             </thead>
-            <tbody id="js-viewKoalas">
-            </tbody>
+            <tbody id="js-viewKoalas"></tbody>
           </table>
         </section>
       </div>
