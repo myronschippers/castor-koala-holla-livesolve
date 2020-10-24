@@ -34,8 +34,16 @@ function setupClickListeners() {
     saveKoala(koalaToSend);
   });
 
-  // event listener
+  // event listener for ready
   $('#js-viewKoalas').on('click', '.js-btn-ready', handleClickReady);
+  // event listener for delete
+  $('#js-viewKoalas').on('click', '.js-btn-delete', handleClickDelete);
+}
+
+function handleClickDelete() {
+  const koalaId = $(this).data('id');
+
+  deleteKoala(koalaId);
 }
 
 function handleClickReady() {
@@ -99,6 +107,10 @@ function updateKoalaReadyTransfer(koalaId) {
       console.log(err);
       alert('Something went wrong readying koala for transfer.');
     });
+}
+
+function deleteKoala(id) {
+  console.log('DELETE: ', id);
 }
 
 //
